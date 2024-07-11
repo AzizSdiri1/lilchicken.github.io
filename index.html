@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>chicken Jump</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+        }
+        canvas {
+            display: block;
+            background-image:url("background.png") ; 
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+        }
+        #gameContainer {
+    position: relative;
+}
+
+#scoreContainer {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: #2c3e50; 
+    padding: 10px 20px; 
+    border-radius: 10px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    color: #fff; 
+    font-family: Arial, sans-serif; 
+    height:500px;
+}
+
+#score, #highScore #nom {
+    display: block;
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+#score::before, #highScore::before, #nom::before {
+    content: ''; 
+    display: inline-block;
+    width: 10px; 
+    height: 10px;
+    background-color: #f39c12; 
+    border-radius: 50%; 
+    margin-right: 10px;
+}
+#startScreen {
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 24px;
+}
+
+#deathscreen {
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    background-color: rgba(220,20,60,1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 24px;
+    display: none; 
+}
+
+
+#startScreen input[type=text] {
+    padding: 10px;
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+#startScreen button {
+    padding: 10px 20px;
+    font-size: 20px;
+    margin-top: 10px;
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+#startScreen button:hover {
+    background-color: #45a049;
+}
+
+    </style>
+</head>
+<body>
+<div id="gameContainer">
+
+    <div id="startScreen">Press Enter your name to Start <br> <input type=text id="name"> <button onclick='start()'>start</button>
+    </div>
+    <div id="deathscreen">press enter to restart the game</button>
+    </div>
+    <canvas id="gameCanvas" width="600" height="600"></canvas>
+    <div id="scoreContainer">
+        <h1> HIGH SCORES </h1>
+        <h3><span id="nom">name : </span></h3>
+        <hr>
+        <span id="score">score: 0</span>
+        <hr>
+        <span id="highScore">High Score: 0</span>
+    </div>
+</div>
+<script type="text/javascript" src=script.js></script>
+</body>
+</html>
